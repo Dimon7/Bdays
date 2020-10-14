@@ -1,4 +1,15 @@
-<!-- NG-ZORRO -->
-<a href="https://github.com/NG-ZORRO/ng-zorro-antd" target="_blank" style="display: flex;align-items: center;justify-content: center;height: 100%;width: 100%;">
-  <img height="300" src="https://img.alicdn.com/tfs/TB1X.qJJgHqK1RjSZFgXXa7JXXa-89-131.svg">
-</a>
+<nz-layout>
+  <nz-header>
+   <span class="title">Birthdays</span>
+  </nz-header>
+  <nz-content class="content">
+    <input nz-input placeholder="first name" [(ngModel)]="firstName" />
+    <input nz-input placeholder="last name" [(ngModel)]="lastName" />
+    <nz-date-picker [(ngModel)]="date"></nz-date-picker>
+    <button nz-button nzType="primary" (click)="addPerson()">Add new person</button>
+    <span *ngIf="errorMessage.length > 0">{{errorMessage}}</span>
+    <ul *ngFor="let person of persons">
+      <li>{{person.firstName}}, {{person.lastName}},  {{person.daysRemaining}} day remaining,  becomes {{person.age}} years old</li>
+    </ul>
+  </nz-content>
+</nz-layout>
