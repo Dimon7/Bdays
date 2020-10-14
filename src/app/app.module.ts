@@ -9,7 +9,9 @@ import { NZ_I18N } from 'ng-zorro-antd/i18n';
 import { en_US } from 'ng-zorro-antd/i18n';
 import { registerLocaleData } from '@angular/common';
 import en from '@angular/common/locales/en';
-
+import { NzButtonModule } from 'ng-zorro-antd/button';
+import { NzDatePickerModule } from 'ng-zorro-antd/date-picker';
+import { NzLayoutModule } from 'ng-zorro-antd/layout';
 registerLocaleData(en);
 
 @NgModule({
@@ -18,7 +20,10 @@ registerLocaleData(en);
   ],
   imports: [
     BrowserModule,
+    NzDatePickerModule,
     FormsModule,
+    NzLayoutModule,
+    NzButtonModule,
     HttpClientModule,
     BrowserAnimationsModule
   ],
