@@ -20,14 +20,17 @@ export class DateCalculationService {
    }
 
    diff = bday.getTime() - now.getTime();
-   return Math.floor(diff / (1000 * 60 * 60 * 24));
+   return Math.floor(diff / (1000 * 60 * 60 * 24)) + 1;
 
+  }
+
+  upcomingBirthDay(days: number): Date{
+    const result = new Date().setDate(new Date().getDate() + days + 1);
+    return new Date(result);
   }
 
   getYears(upcomingDate: Date): number {
     const now = new Date();
     return now.getFullYear() - upcomingDate.getFullYear();
   }
-
-
 }
