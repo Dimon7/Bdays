@@ -18,6 +18,7 @@ import {AppRoutingModule} from './app-routing.module';
 import { UpcomingBdayComponent } from './upcoming-bday/upcoming-bday.component';
 import { ManageBdayComponent } from './manage-bday/manage-bday.component';
 import {NzDividerModule} from 'ng-zorro-antd/divider';
+import { CalculateAgePipe } from './shared/calculate-age.pipe';
 registerLocaleData(en);
 
 @NgModule({
@@ -25,7 +26,8 @@ registerLocaleData(en);
     AppComponent,
     AddUserComponent,
     UpcomingBdayComponent,
-    ManageBdayComponent
+    ManageBdayComponent,
+    CalculateAgePipe
   ],
   imports: [
     BrowserModule,
