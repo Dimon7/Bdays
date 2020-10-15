@@ -2,4 +2,4 @@
 <input nz-input placeholder="last name" [(ngModel)]="lastName" />
 <nz-date-picker [(ngModel)]="date"></nz-date-picker>
 <button nz-button nzType="primary" (click)="addPerson()">Add new person</button>
-<span *ngIf="errorMessage.length > 0">{{errorMessage}}</span>
+<div *ngIf="errorMessage.length > 0" class="error-message">{{errorMessage}}</div>
