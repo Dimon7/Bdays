@@ -1,15 +1,15 @@
 <nz-layout>
   <nz-header>
    <span class="title">Birthdays</span>
+    <span class="pages-link">
+      <span class="sub-title"> - Pages:</span>
+      <a class="link" routerLink="/add-user">Add person</a>
+      <a class="link" routerLink="/upcoming-birthday">List upcoming birthday</a>
+      <a class="link" routerLink="/manage-birthday">Manage birthdays</a>
+    </span>
+
   </nz-header>
   <nz-content class="content">
-    <input nz-input placeholder="first name" [(ngModel)]="firstName" />
-    <input nz-input placeholder="last name" [(ngModel)]="lastName" />
-    <nz-date-picker [(ngModel)]="date"></nz-date-picker>
-    <button nz-button nzType="primary" (click)="addPerson()">Add new person</button>
-    <span *ngIf="errorMessage.length > 0">{{errorMessage}}</span>
-    <ul *ngFor="let person of persons">
-      <li>{{person.firstName}}, {{person.lastName}},  {{person.daysRemaining}} day remaining,  becomes {{person.age}} years old</li>
-    </ul>
+   <router-outlet></router-outlet>
   </nz-content>
 </nz-layout>
