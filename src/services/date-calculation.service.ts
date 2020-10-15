@@ -10,7 +10,7 @@ export class DateCalculationService {
   getDaysRemaining(upcomingDate: Date): number{
    const now = new Date();
    const bday = new Date(upcomingDate);
-   console.log(bday);
+
    bday.setFullYear(now.getFullYear());
 
    let diff = bday.getTime() - now.getTime();
@@ -20,11 +20,7 @@ export class DateCalculationService {
    }
 
    diff = bday.getTime() - now.getTime();
-   const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-
-   console.log(days);
-
-   return days;
+   return Math.floor(diff / (1000 * 60 * 60 * 24));
 
   }
 
