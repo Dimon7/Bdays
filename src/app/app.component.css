@@ -6,3 +6,11 @@
   height: 100vh;
   padding: 15px;
 }
+
+.sub-title{
+  color: #fff;
+}
+.sub-title, .link{
+  margin-left: 10px;
+}
+
