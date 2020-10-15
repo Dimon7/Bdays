@@ -1,15 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {StorageService} from '../../services/storage.service';
-
-
-
-interface IPerson {
-  firstName: string;
-  lastName: string;
-  dateOfBirth: Date;
-  daysRemaining?: number;
-  age?: number;
-}
+import {IPerson} from '../shared/person';
 
 @Component({
   selector: 'app-manage-bday',
@@ -27,7 +18,7 @@ export class ManageBdayComponent implements OnInit {
 
 
   ngOnInit(): void {
-    console.log(this.persons);
+
   }
 
 }

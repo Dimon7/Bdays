@@ -1,16 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {StorageService} from '../../services/storage.service';
 import {DateCalculationService} from '../../services/date-calculation.service';
-
-
-
-interface IPerson {
-  firstName: string;
-  lastName: string;
-  dateOfBirth: Date;
-  daysRemaining?: number;
-  age?: number;
-}
+import {IPerson} from '../shared/person';
 
 @Component({
   selector: 'app-add-user',
@@ -31,10 +22,17 @@ export class AddUserComponent implements OnInit {
 
   persons: Array<IPerson> = [];
 
+  hideMessage(): void{
+    setTimeout(() => {
+      this.errorMessage = '';
+    }, 2500);
+  }
+
   addPerson(): void{
     const today = new Date();
-    if (today.getFullYear() < new Date(this.date).getFullYear()){
-      this.errorMessage = `You could not set year of birthday which is more than ${today.getFullYear()}`;
+    if (today.getTime() < new Date(this.date).getTime()){
+      this.errorMessage = `You could not set day of birthday which is more than ${today}`;
+      this.hideMessage();
     }else {
       const person: IPerson = {
         dateOfBirth: this.date,

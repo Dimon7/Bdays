@@ -1,16 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {StorageService} from '../../services/storage.service';
-import {DateCalculationService} from '../../services/date-calculation.service';
-
-
-
-interface IPerson {
-  firstName: string;
-  lastName: string;
-  dateOfBirth: Date;
-  daysRemaining?: number;
-  age?: number;
-}
+import {IPerson} from '../shared/person';
 
 @Component({
   selector: 'app-upcoming-bday',
@@ -19,7 +9,7 @@ interface IPerson {
 })
 export class UpcomingBdayComponent implements OnInit {
 
-  constructor(private storage: StorageService, private dateCalculation: DateCalculationService) {
+  constructor(private storage: StorageService) {
     this.persons = this.storage.get<IPerson[]>('persons') || [];
   }
 
